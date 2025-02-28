@@ -64,14 +64,12 @@
             </div>
             <form id="formBooking" class="relative w-full md:w-fit grid grid-cols-1 md:grid-cols-4 gap-4 mt-8 rounded-xl p-4 bg-white border">
                 <input name="location" required type="text" placeholder="Lokasi Penjemputan" class="p-3 rounded-lg w-full border">
-                <!-- <input name="date" required type="date" class="p-3 rounded-lg w-full border"> -->
-                <!-- <input name="time" required type="time" class="p-3 rounded-lg w-full border"> -->
                 <div class="input-wrapper">
-                    <input class="appearance-none" type="date" name="date" required>
+                    <input data-placeholder="Pilih Tanggal" class="appearance-none" type="date" name="date" required>
                     <span class="icon">📅</span>
                 </div>
                 <div class="input-wrapper">
-                    <input class="appearance-none" type="time" name="time" required>
+                    <input data-placeholder="Pilih Waktu" class="appearance-none" type="time" name="time" required>
                     <span class="icon">⏰</span>
                 </div>
                 <select name="car" type="text" required class="p-3 rounded-lg w-full appearance-none rounded-lg border">
