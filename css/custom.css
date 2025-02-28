@@ -1,0 +1,45 @@
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 2.5rem;
+  /* Space for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  pointer-events: none;
+  /* Prevent interaction */
+}
+
+/* Hide the default calendar/time picker icon on all devices */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  appearance: none;
+  /* Ensures it is removed in some browsers */
+}
+
+/* Hide the arrow (calendar/time picker icon) on mobile */
+@media (max-width: 768px) {
+  /* Adjust breakpoint if needed */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none !important;
+    /* Force hide */
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+}
