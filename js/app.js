@@ -124,43 +124,27 @@ function handleCloseMobileMenu(e) {
 }
 
 function initCarsAnimation() {
-  // Set initial hidden state for all cards
-  gsap.set("#cars .car-card", { opacity: 0, y: 60, scale: 0.85, rotateX: 10 });
+   // Set initial hidden state for all cards
+   gsap.set(".car-card", { opacity: 0, y: 60, scale: 0.85, rotateX: 10 });
 
-  // Common animation properties
-  const animationProps = {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    rotateX: 0,
-    duration: 1.2,
-    ease: "power3.out",
-    stagger: 0.2, // Smooth staggered effect
-    scrollTrigger: {
-      trigger: "#car-grid",
-      start: "top 80%", // Starts when 80% is in view
-      once: true, // Runs once
-    },
-  };
-
-  // Desktop Animation
-  if (window.innerWidth >= 768) {
-    gsap.to("#cars .car-card", animationProps);
-  }
-  // Mobile Animation (Faster & Lower Stagger)
-  else {
-    gsap.to("#cars .car-card", {
-      ...animationProps,
-      duration: 0.8,
-      stagger: 0.15,
-      rotateX: 5, // Less pronounced on mobile
-      scrollTrigger: {
-        trigger: "#car-grid",
-        start: "top 90%", // Triggers later on mobile
-        once: true,
-      },
-    });
-  }
+   // Determine animation settings based on screen width
+   const isMobile = window.innerWidth < 768;
+ 
+   gsap.to(".car-card", {
+     opacity: 1,
+     y: 0,
+     scale: 1,
+     rotateX: 0,
+     duration: isMobile ? 0.8 : 1.2, // Faster animation on mobile
+     ease: "power3.out",
+     stagger: 0.2, // Smooth staggered effect
+     scrollTrigger: {
+       trigger: "#car-grid",
+       start: isMobile ? "top 95%" : "top 80%", // Start animation only when the section is almost visible on mobile
+       end: "top 40%",
+       once: true, // Runs once
+     },
+   });
 }
 
 function initTestimoniAnimation() {
