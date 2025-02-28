@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Car Rent</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-end md:justify-center p-6 md:px-8"
+        aria-label="Global"
+      >
+        <div class="flex md:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-slot="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div
+          id="mobileMenu"
+          class="lg:hidden fixed inset-y-0 right-0 z-10 w-full max-w-sm px-6 py-6 sm:ring-1 sm:ring-gray-900/10 transform transition-transform duration-500 easy-in-out translate-x-full opacity-0"
+          role="dialog"
+          aria-modal="true"
+        >
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <div class="backdrop fixed inset-0 z-10"></div>
+          <div
+            class="fixed inset-y-0 right-0 z-10 w-[75%] overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="flex flex-row items-center gap-2 -m-1.5 p-1.5">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M46.3383 25.8956C46.0008 22.1072 45.4448 21.3694 45.2348 21.0919C44.752 20.4506 43.9795 20.0316 43.162 19.5919C43.1158 19.5674 43.0759 19.5326 43.0454 19.4901C43.015 19.4476 42.9948 19.3985 42.9865 19.3469C42.9783 19.2953 42.9821 19.2424 42.9977 19.1925C43.0134 19.1426 43.0404 19.097 43.0767 19.0594C43.2281 18.9058 43.3445 18.7213 43.4178 18.5186C43.4911 18.3158 43.5196 18.0995 43.5014 17.8847C43.4661 17.5037 43.289 17.1499 43.0051 16.8934C42.7211 16.6369 42.3512 16.4965 41.9686 16.5H40.5061C40.4434 16.5004 40.3808 16.5044 40.3186 16.5122C40.2759 16.4937 40.2317 16.4789 40.1864 16.4681C39.3201 14.6372 38.1342 12.1303 35.6761 10.9069C32.0301 9.09375 25.3139 9 24.0014 9C22.6889 9 15.9726 9.09375 12.3314 10.9041C9.87327 12.1275 8.68733 14.6344 7.82108 16.4653L7.81358 16.4803C7.77038 16.4864 7.72795 16.4971 7.68702 16.5122C7.62481 16.5044 7.56221 16.5004 7.49952 16.5H6.03421C5.65161 16.4965 5.28166 16.6369 4.99774 16.8934C4.71381 17.1499 4.53665 17.5037 4.5014 17.8847C4.48474 18.099 4.51457 18.3145 4.58884 18.5162C4.6631 18.718 4.78006 18.9013 4.93171 19.0538C4.96799 19.0914 4.99502 19.137 5.01067 19.1869C5.02632 19.2368 5.03016 19.2896 5.02189 19.3413C5.01361 19.3929 4.99345 19.4419 4.963 19.4844C4.93254 19.527 4.89263 19.5618 4.8464 19.5863C4.0289 20.0287 3.25265 20.4478 2.77358 21.0863C2.56358 21.3675 2.00858 22.1016 1.67014 25.89C1.48264 28.0219 1.45452 30.2288 1.60171 31.65C1.91015 34.6031 2.48858 36.3881 2.51296 36.4622C2.60172 36.7317 2.76511 36.9705 2.98415 37.1509C3.2032 37.3313 3.46892 37.4458 3.75046 37.4812V37.5C3.75046 37.8978 3.90849 38.2794 4.1898 38.5607C4.4711 38.842 4.85263 39 5.25046 39H10.5005C10.8983 39 11.2798 38.842 11.5611 38.5607C11.8424 38.2794 12.0005 37.8978 12.0005 37.5C12.8076 37.5 13.3692 37.3556 13.9645 37.2019C14.824 36.9703 15.7025 36.8162 16.5895 36.7416C19.4498 36.4688 22.2942 36.375 24.0014 36.375C25.6739 36.375 28.6439 36.4688 31.5089 36.7416C32.3994 36.8164 33.2814 36.9711 34.1442 37.2038C34.7142 37.35 35.2551 37.485 36.0042 37.4991C36.0042 37.8969 36.1622 38.2784 36.4436 38.5597C36.7249 38.841 37.1064 38.9991 37.5042 38.9991H42.7542C43.152 38.9991 43.5336 38.841 43.8149 38.5597C44.0962 38.2784 44.2542 37.8969 44.2542 37.4991V37.4878C44.5364 37.4531 44.8029 37.3388 45.0227 37.1584C45.2425 36.978 45.4064 36.7388 45.4955 36.4688C45.5198 36.3947 46.0983 34.6097 46.4067 31.6566C46.5539 30.2344 46.5276 28.0312 46.3383 25.8956ZM10.5323 17.7478C11.2823 16.1541 12.1401 14.3503 13.6673 13.59C15.8742 12.4913 20.4483 11.9962 24.0014 11.9962C27.5545 11.9962 32.1286 12.4875 34.3355 13.59C35.8626 14.3503 36.7167 16.155 37.4705 17.7478L37.5642 17.9513C37.619 18.0671 37.6433 18.195 37.6346 18.3228C37.6259 18.4507 37.5847 18.5742 37.5147 18.6815C37.4448 18.7889 37.3485 18.8765 37.2351 18.9361C37.1216 18.9957 36.9948 19.0252 36.8667 19.0219C33.7514 18.9375 27.1889 18.6675 24.0014 18.6675C20.8139 18.6675 14.2514 18.9441 11.1314 19.0284C11.0033 19.0318 10.8765 19.0023 10.7631 18.9427C10.6496 18.8831 10.5533 18.7955 10.4834 18.6881C10.4134 18.5807 10.3722 18.4572 10.3635 18.3294C10.3548 18.2016 10.3791 18.0736 10.4339 17.9578C10.4667 17.8884 10.5014 17.8181 10.5323 17.7478ZM11.6508 25.2131C10.0381 25.4072 8.41509 25.503 6.79077 25.5C5.79702 25.5 4.77233 25.2188 4.58202 24.3337C4.45171 23.7384 4.46577 23.4038 4.53608 23.0672C4.59514 22.7812 4.6889 22.5731 5.15765 22.5C6.3764 22.3125 7.05796 22.5478 9.05296 23.1356C10.3758 23.5247 11.3301 24.0431 11.8739 24.4537C12.1467 24.6562 12.0014 25.185 11.6508 25.2131ZM32.4051 32.9006C31.1714 33.0413 28.7039 32.9897 24.0295 32.9897C19.3551 32.9897 16.8886 33.0413 15.6548 32.9006C14.3817 32.7591 12.7589 31.5553 13.867 30.4828C14.6048 29.7759 16.3261 29.2472 18.6183 28.95C20.9105 28.6528 21.8808 28.5 24.0201 28.5C26.1595 28.5 27.0314 28.5938 29.422 28.9509C31.8126 29.3081 33.6192 29.8434 34.1733 30.4837C35.1839 31.6313 33.6773 32.7516 32.4051 32.9062V32.9006ZM43.4208 24.3328C43.2333 25.2216 42.202 25.4991 41.212 25.4991C39.5566 25.4994 37.9026 25.4037 36.2583 25.2122C35.9714 25.185 35.8383 24.6816 36.1289 24.4528C36.6642 24.0319 37.6289 23.5238 38.9498 23.1347C40.9448 22.5469 42.0951 22.3116 43.0833 22.5075C43.3242 22.5553 43.4517 22.8141 43.4667 22.9762C43.5328 23.4278 43.5173 23.8877 43.4208 24.3337V24.3328Z"
+                    fill="black"
+                  />
+                </svg>
+                <div class="text-base font-semibold">Sri Cart Rent</div>
+              </a>
+              <button
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="size-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  data-slot="icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a
+                    onclick="handleCloseMobileMenu(event)"
+                    href="#cars"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    >Mobil</a
+                  >
+                  <a
+                    onclick="handleCloseMobileMenu(event)"
+                    href="#testimoni"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    >Testimoni</a
+                  >
+                  <a
+                    onclick="handleCloseMobileMenu(event)"
+                    href="#contact"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    >Kontak Kami</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:flex md:gap-x-12">
+          <a
+            href="#cars"
+            class="text-x/6 font-semibold text-white transition-all duration-300"
+            >Mobil</a
+          >
+          <a
+            href="#testimoni"
+            class="text-x/6 font-semibold text-white transition-all duration-300"
+            >Testimoni</a
+          >
+          <a
+            href="#contact"
+            class="text-x/6 font-semibold text-white transition-all duration-300"
+            >Kontak Kami</a
+          >
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="flex flex-col justify-center items-center relative bg-[url('./showroom.jpg')] bg-cover bg-center h-screen px-2 md:px-0"
+    >
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="relative z-10 text-center text-white pt-48 lg:pt-32 px-4">
+        <h1 class="text-3xl lg:text-4xl font-semibold">
+          Perjalanan Anda, Kenyamanan Kami
+        </h1>
+        <p class="mt-4 text-md">
+          Temukan mobil impian Anda untuk perjalanan bisnis atau liburan bersama
+          kami.
+        </p>
+      </div>
+      <form
+        id="formBooking"
+        class="relative w-full md:w-fit grid grid-cols-1 md:grid-cols-4 gap-4 mt-8 rounded-xl p-4 bg-white border"
+      >
+        <input
+          name="location"
+          required
+          type="text"
+          placeholder="Lokasi Penjemputan"
+          class="p-3 rounded-lg w-full border"
+        />
+        <input
+          name="date"
+          required
+          type="date"
+          class="p-3 rounded-lg w-full border"
+        />
+        <input
+          name="time"
+          required
+          type="time"
+          class="p-3 rounded-lg w-full border"
+        />
+        <select
+          name="car"
+          type="text"
+          required
+          class="p-3 rounded-lg w-full appearance-none rounded-lg border"
+        >
+          <option value="" disabled selected>Pilih Mobil</option>
+          <option value="Inova">Inova</option>
+          <option value="Avanza">Avanza</option>
+          <option value="BR-V">BR-V</option>
+          <option value="Inova">Inova</option>
+          <option value="Avanza">Avanza</option>
+          <option value="BR-V">BR-V</option>
+        </select>
+        <button
+          type="submit"
+          class="flex items-center justify-center col-span-1 md:col-span-4 bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition gap-2"
+        >
+          <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+              ></path>
+            </svg>
+          </span>
+          <span>Pesan Sekarang</span>
+        </button>
+      </form>
+    </section>
+    <section id="cars" class="max-w-5xl mx-auto mt-28 md:mt-12 px-2 md:px-0">
+      <h2 class="text-3xl font-semibold text-center">Popular Rental Cars</h2>
+      <div
+        id="car-grid"
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-0 md:mt-6 opacity-0"
+      >
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="Inova"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">Inova</h3>
+          <p class="text-gray-500">Rp 500.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="Inova"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="Avanza"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">Avanza</h3>
+          <p class="text-gray-500">Rp 450.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="Avanza"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="BR-V"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">BR-V</h3>
+          <p class="text-gray-500">Rp 600.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="BR-V"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="Inova"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">Inova</h3>
+          <p class="text-gray-500">Rp 500.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="Inova"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="Avanza"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">Avanza</h3>
+          <p class="text-gray-500">Rp 450.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="Avanza"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+        <div
+          class="car-card opacity-0 translate-y-10 scale-90 transition-all duration-1000 ease-out bg-white p-4 rounded-lg shadow-lg hover:scale-105"
+        >
+          <img
+            src="https://d1hv7ee95zft1i.cloudfront.net/custom/car-model-color-photo/gallery/toyota-avanza-greenish-gun-metal-mica-metallic-65c345a66b615.jpg"
+            width="600"
+            height="600"
+            alt="BR-V"
+            class="rounded-lg"
+          />
+          <h3 class="md:mt-3 text-xl font-semibold">BR-V</h3>
+          <p class="text-gray-500">Rp 600.000/day</p>
+          <div class="grid grid-cols-2 md:grid-cols-1">
+            <div>🛞 All-Wheel Drive</div>
+            <div>👤 Seats: 6</div>
+            <div>⛽ Fuel: Pertamax</div>
+            <div>📦 Luggage: 4 Bags</div>
+          </div>
+          <button
+            type="button"
+            data-car="BR-V"
+            class="check-car-availability relative flex items-center justify-center rounded-md border border-transparent bg-green-500 px-8 py-2 mt-2 text-sm font-medium text-white hover:bg-green-600"
+          >
+            <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                ></path>
+              </svg>
+            </span>
+            <span class="ml-2">Cek Ketersediaan Mobil</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section
+      id="testimoni"
+      class="mx-auto max-w-2xl px-4 py-8 sm:py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8 lg:px-8 lg:py-32"
+    >
+      <div class="lg:col-span-4">
+        <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+          Testimoni Pelanggan
+        </h2>
+        <div class="mt-3 flex items-center">
+          <div>
+            <div class="overall-stars flex items-center">
+              <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
+              <svg
+                class="size-5 shrink-0 text-yellow-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="size-5 shrink-0 text-yellow-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="size-5 shrink-0 text-yellow-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="size-5 shrink-0 text-yellow-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="size-5 shrink-0 text-gray-300"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <p class="sr-only">4 dari 5 bintang</p>
+          </div>
+          <p class="ml-2 text-sm text-gray-900">Dari 1624 testimoni</p>
+        </div>
+        <div class="mt-6">
+          <h3 class="sr-only">Review data</h3>
+          <dl class="space-y-3">
+            <div class="progress-bar flex items-center text-sm">
+              <dt class="flex flex-1 items-center">
+                <p class="w-3 font-medium text-gray-900">5</p>
+                <div aria-hidden="true" class="ml-1 flex flex-1 items-center">
+                  <svg
+                    class="size-5 shrink-0 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+                  </svg>
+                  <div
+                    class="relative ml-3 flex-1 h-3 rounded-full border border-gray-200 bg-gray-100"
+                  >
+                    <div
+                      class="progress-bar-fill absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
+                      data-width="63%"
+                    ></div>
+                  </div>
+                </div>
+              </dt>
+              <dd class="ml-3 w-10 text-right text-sm text-gray-900">63%</dd>
+            </div>
+            <div class="progress-bar flex items-center text-sm">
+              <dt class="flex flex-1 items-center">
+                <p class="w-3 font-medium text-gray-900">4</p>
+                <div aria-hidden="true" class="ml-1 flex flex-1 items-center">
+                  <svg
+                    class="size-5 shrink-0 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+                  </svg>
+                  <div
+                    class="relative ml-3 flex-1 h-3 rounded-full border border-gray-200 bg-gray-100"
+                  >
+                    <div
+                      class="progress-bar-fill absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
+                      data-width="10%"
+                    ></div>
+                  </div>
+                </div>
+              </dt>
+              <dd class="ml-3 w-10 text-right text-sm text-gray-900">10%</dd>
+            </div>
+            <div class="progress-bar flex items-center text-sm">
+              <dt class="flex flex-1 items-center">
+                <p class="w-3 font-medium text-gray-900">3</p>
+                <div aria-hidden="true" class="ml-1 flex flex-1 items-center">
+                  <svg
+                    class="size-5 shrink-0 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+                  </svg>
+                  <div
+                    class="relative ml-3 flex-1 h-3 rounded-full border border-gray-200 bg-gray-100"
+                  >
+                    <div
+                      class="progress-bar-fill absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
+                      data-width="6%"
+                    ></div>
+                  </div>
+                </div>
+              </dt>
+              <dd class="ml-3 w-10 text-right text-sm text-gray-900">6%</dd>
+            </div>
+            <div class="progress-bar flex items-center text-sm">
+              <dt class="flex flex-1 items-center">
+                <p class="w-3 font-medium text-gray-900">2</p>
+                <div aria-hidden="true" class="ml-1 flex flex-1 items-center">
+                  <svg
+                    class="size-5 shrink-0 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+                  </svg>
+                  <div
+                    class="relative ml-3 flex-1 h-3 rounded-full border border-gray-200 bg-gray-100"
+                  >
+                    <div
+                      class="progress-bar-fill absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
+                      data-width="12%"
+                    ></div>
+                  </div>
+                </div>
+              </dt>
+              <dd class="ml-3 w-10 text-right text-sm text-gray-900">12%</dd>
+            </div>
+            <div class="progress-bar flex items-center text-sm">
+              <dt class="flex flex-1 items-center">
+                <p class="w-3 font-medium text-gray-900">1</p>
+                <div aria-hidden="true" class="ml-1 flex flex-1 items-center">
+                  <svg
+                    class="size-5 shrink-0 text-yellow-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="..." clip-rule="evenodd" />
+                  </svg>
+                  <div
+                    class="relative ml-3 flex-1 h-3 rounded-full border border-gray-200 bg-gray-100"
+                  >
+                    <div
+                      class="progress-bar-fill absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
+                      data-width="9%"
+                    ></div>
+                  </div>
+                </div>
+              </dt>
+              <dd class="ml-3 w-10 text-right text-sm text-gray-900">9%</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="mt-10">
+          <h3 class="text-lg font-medium text-gray-900">
+            Bagikan pemikiran Anda
+          </h3>
+          <p class="mt-1 text-sm text-gray-600">
+            Jika Anda pernah menggunakan jasa ini, bagikan pendapat Anda dengan
+            pelanggan lain
+          </p>
+          <a
+            href="#"
+            class="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
+            >Tulis Testimoni
+          </a>
+        </div>
+      </div>
+      <div class="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0">
+        <h3 class="sr-only">Recent reviews</h3>
+        <div class="flow-root">
+          <div class="-my-12 divide-y divide-gray-200">
+            <div class="testimonial-item py-12">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+                  alt="Mace dia"
+                  class="size-12 rounded-full"
+                />
+                <div class="ml-4">
+                  <h4 class="text-sm font-bold text-gray-900">Mace dia</h4>
+                  <div class="mt-1 flex items-center">
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <p class="sr-only">5 dari 5 bintang</p>
+                </div>
+              </div>
+              <div class="mt-4 space-y-6 text-base text-gray-600 italic">
+                <p>
+                  Dong pu mobil terawat, pelayanan juga sip sekali, kam tra
+                  menyesal pake dong pu mobil.
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-item py-12">
+              <div class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+                  alt="Mace dia"
+                  class="size-12 rounded-full"
+                />
+                <div class="ml-4">
+                  <h4 class="text-sm font-bold text-gray-900">Mace dia</h4>
+                  <div class="mt-1 flex items-center">
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <svg
+                      class="size-5 shrink-0 text-gray-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <p class="sr-only">4 dari 5 bintang</p>
+                </div>
+              </div>
+              <div class="mt-4 space-y-6 text-base text-gray-600 italic">
+                <p>Mobil nyaman, pelayanan baik, rekomen ni.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="relative isolate bg-white">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <div
+          class="relative px-6 pt-12 pb-8 md:pt-32 lg:static lg:px-8 lg:py-48"
+        >
+          <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <div
+              class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden bg-gray-100 ring-1 ring-gray-900/10 lg:w-1/2"
+            >
+              <svg
+                class="absolute inset-0 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                aria-hidden="true"
+              >
+                <defs>
+                  <pattern
+                    id="83fd4e5a-9d52-42fc-97b6-718e5d7ee527"
+                    width="200"
+                    height="200"
+                    x="100%"
+                    y="-1"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path d="M130 200V.5M.5 .5H200" fill="none" />
+                  </pattern>
+                </defs>
+                <rect
+                  width="100%"
+                  height="100%"
+                  stroke-width="0"
+                  fill="white"
+                />
+                <svg x="100%" y="-1" class="overflow-visible fill-gray-50">
+                  <path d="M-470.5 0h201v201h-201Z" stroke-width="0" />
+                </svg>
+                <rect
+                  width="100%"
+                  height="100%"
+                  stroke-width="0"
+                  fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"
+                />
+              </svg>
+            </div>
+            <h2
+              class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+            >
+              Hubungi Kami
+            </h2>
+            <h3
+              class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+            >
+              Rental Mobil Sri
+            </h3>
+            <p class="mt-6 text-lg/8 text-gray-600">
+              Butuh mobil untuk perjalanan bisnis, liburan, atau keperluan
+              lainnya? Kami siap melayani Anda dengan armada terbaik dan harga
+              terjangkau!
+            </p>
+            <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Alamat</span>
+                  <svg
+                    class="h-7 w-6 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
+                    />
+                  </svg>
+                </dt>
+                <dd>545 Mavis Island<br />Chicago, IL 99191</dd>
+              </div>
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Nomor Telepon</span>
+                  <svg
+                    class="h-7 w-6 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                    />
+                  </svg>
+                </dt>
+                <dd>
+                  <a class="hover:text-gray-900" href="tel:+1 (555) 234-5678"
+                    >+1 (555) 234-5678</a
+                  >
+                </dd>
+              </div>
+              <div class="flex gap-x-4">
+                <dt class="flex-none">
+                  <span class="sr-only">Email</span>
+                  <svg
+                    class="h-7 w-6 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    />
+                  </svg>
+                </dt>
+                <dd>
+                  <a class="hover:text-gray-900" href="mailto:hello@example.com"
+                    >hello@example.com</a
+                  >
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <form
+          id="formContactUs"
+          class="px-6 pt-10 pb-4 sm:pb-16 lg:px-8 lg:py-48"
+        >
+          <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label
+                  for="first-name"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Nama Depan</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    required
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    autocomplete="given-name"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="last-name"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Nama Belakang</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    autocomplete="family-name"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="email"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Email</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="phone-number"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Nomor Telepon</label
+                >
+                <div class="mt-2.5">
+                  <input
+                    required
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    autocomplete="tel"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  />
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="message"
+                  class="block text-sm/6 font-semibold text-gray-900"
+                  >Pesan</label
+                >
+                <div class="mt-2.5">
+                  <textarea
+                    required
+                    name="message"
+                    id="message"
+                    rows="4"
+                    class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 flex justify-end">
+              <button
+                type="submit"
+                class="flex rounded-md bg-green-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 gap-2"
+              >
+                <!-- Whatsapp -->
+                <span class="[&amp;>svg]:h-5 [&amp;>svg]:w-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>Kirim Pesan</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="bg-white">
+      <div
+        class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
+      >
+        <div class="flex justify-center gap-x-6 md:order-2">
+          <a href="#" class="text-gray-600 hover:text-gray-800">
+            <span class="sr-only">Facebook</span>
+            <svg
+              class="size-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">
+            <span class="sr-only">Instagram</span>
+            <svg
+              class="size-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">
+            <span class="sr-only">X</span>
+            <svg
+              class="size-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">
+          &copy;2025 Sri Car Rent, Inc. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <!-- This is library file for date & time manipulation. DO NOT MODIFY -->
+    <script src="./js/moment.js"></script>
+    <!-- This is library for animation. DO NOT MODIFY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Our client side logic in here. Feel free to modify -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
