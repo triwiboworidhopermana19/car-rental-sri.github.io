@@ -61,11 +61,13 @@ function handleFormContactUs(e) {
     `Nama: ${firstName} ${lastName}`,
     `Email: ${email}`,
     `Nomor Telepon: ${phoneNumber}`,
-    `Pesan: ${message}`
-  ].join('\n');
+    `Pesan: ${message}`,
+  ].join("\n");
 
   window.open(
-    `https://api.whatsapp.com/send/?phone=1234567890&text=${encodeURIComponent(finalMessage)}`,
+    `https://api.whatsapp.com/send/?phone=1234567890&text=${encodeURIComponent(
+      finalMessage
+    )}`,
     "_blank"
   );
 }
@@ -77,7 +79,11 @@ function resetTextAreaValidation(e) {
 function validatePhoneNumber(e) {
   this.value = this.value.replace(/\D/g, ""); // Remove all non-numeric characters
 
-  if (this.value && this.value.length >= 2 && !["62", "08"].includes(this.value.substring(0, 2))) {
+  if (
+    this.value &&
+    this.value.length >= 2 &&
+    !["62", "08"].includes(this.value.substring(0, 2))
+  ) {
     this.setCustomValidity("Invalid phone number.");
     this.reportValidity();
   } else {
@@ -117,31 +123,44 @@ function handleCloseMobileMenu(e) {
   }, 500); // Matches the Tailwind transition duration (500ms)
 }
 
-function initCarsAnimationOnEntry() {
-  const carGrid = document.getElementById("car-grid");
-  const carCards = document.querySelectorAll(".car-card");
+function initCarsAnimation() {
+  // Set initial hidden state for all cards
+  gsap.set("#cars .car-card", { opacity: 0, y: 60, scale: 0.85, rotateX: 10 });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          carGrid.classList.remove("opacity-0");
-
-          carCards.forEach((card, index) => {
-            setTimeout(() => {
-              card.classList.remove("opacity-0", "translate-y-10", "scale-90");
-              card.classList.add("scale-100");
-            }, index * 200); // Stagger effect with 200ms delay per card
-          });
-
-          observer.unobserve(carGrid); // Stop observing after animation
-        }
-      });
+  // Common animation properties
+  const animationProps = {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    duration: 1.2,
+    ease: "power3.out",
+    stagger: 0.2, // Smooth staggered effect
+    scrollTrigger: {
+      trigger: "#car-grid",
+      start: "top 80%", // Starts when 80% is in view
+      once: true, // Runs once
     },
-    { threshold: 0.3 }
-  ); // Trigger when 30% of the section is visible
+  };
 
-  observer.observe(carGrid);
+  // Desktop Animation
+  if (window.innerWidth >= 768) {
+    gsap.to("#cars .car-card", animationProps);
+  }
+  // Mobile Animation (Faster & Lower Stagger)
+  else {
+    gsap.to("#cars .car-card", {
+      ...animationProps,
+      duration: 0.8,
+      stagger: 0.15,
+      rotateX: 5, // Less pronounced on mobile
+      scrollTrigger: {
+        trigger: "#car-grid",
+        start: "top 90%", // Triggers later on mobile
+        once: true,
+      },
+    });
+  }
 }
 
 function initTestimoniAnimation() {
@@ -268,10 +287,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   menuButton.addEventListener("click", handleOpenMobileMenu);
   closeButton.addEventListener("click", handleCloseMobileMenu);
 
-  initCarsAnimationOnEntry();
-
   gsap.registerPlugin(ScrollTrigger);
 
+  initCarsAnimation();
   initTestimoniAnimation();
   initContactUsAnimation();
 });
