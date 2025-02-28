@@ -6,10 +6,32 @@
         <title>Sri Car Rent</title>
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <style>
-            html, body {
-                overflow-x: hidden;
+            input[type="date"],
+            input[type="time"] {
+              -webkit-appearance: none;
+              /* Ensure uniform appearance */
+              -moz-appearance: textfield;
+              /* Fix for Firefox */
+              appearance: auto;
+              /* Let browser show the native icons */
+              background-color: white;
+              /* Ensure it looks normal */
+              padding-right: 2.5rem;
+              /* Prevent text from overlapping the icon */
+              position: relative;
             }
-        </style>
+        
+            input[type="date"]::-webkit-calendar-picker-indicator,
+            input[type="time"]::-webkit-calendar-picker-indicator {
+              display: block !important;
+              /* Force the icon to be visible */
+              opacity: 1 !important;
+              /* Ensure it is not hidden */
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+          </style>
     </head>
     <body class="overflow-x:hidden sm:overflow-auto">
         <header class="absolute inset-x-0 top-0 z-50 w-full overflow-hidden">
