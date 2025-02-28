@@ -1,3 +1,15 @@
+.placeholder-style::before {
+  content: attr(data-placeholder);
+  color: gray;
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+}
+
+input:focus::before {
+  content: "";
+}
+
 .input-wrapper {
   position: relative;
   display: flex;
@@ -39,7 +51,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     /* Force hide */
   }
 
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
 }
