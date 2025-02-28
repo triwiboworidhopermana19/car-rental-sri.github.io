@@ -72,7 +72,7 @@ function resetTextAreaValidation(e) {
 function validatePhoneNumber(e) {
   this.value = this.value.replace(/\D/g, ""); // Remove all non-numeric characters
 
-  if (this.value && this.value.length >= 2) {
+  if (this.value && this.value.length >= 2 && !["62", "08"].includes(this.value)) {
     this.setCustomValidity("Invalid phone number.");
     this.reportValidity();
   }
