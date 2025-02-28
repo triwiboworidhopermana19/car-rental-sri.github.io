@@ -124,27 +124,27 @@ function handleCloseMobileMenu(e) {
 }
 
 function initCarsAnimation() {
-   // Set initial hidden state for all cards
-   gsap.set(".car-card", { opacity: 0, y: 60, scale: 0.85, rotateX: 10 });
+  // Set initial hidden state for all cards
+  gsap.set(".car-card", { opacity: 0, y: 60, scale: 0.85, rotateX: 10 });
 
-   // Determine animation settings based on screen width
-   const isMobile = window.innerWidth < 768;
- 
-   gsap.to(".car-card", {
-     opacity: 1,
-     y: 0,
-     scale: 1,
-     rotateX: 0,
-     duration: isMobile ? 0.8 : 1.2, // Faster animation on mobile
-     ease: "power3.out",
-     stagger: 0.2, // Smooth staggered effect
-     scrollTrigger: {
-       trigger: "#car-grid",
-       start: isMobile ? "top 95%" : "top 80%", // Start animation only when the section is almost visible on mobile
-       end: "top 40%",
-       once: true, // Runs once
-     },
-   });
+  // Determine animation settings based on screen width
+  const isMobile = window.innerWidth < 768;
+
+  gsap.to(".car-card", {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    duration: isMobile ? 0.8 : 1.2, // Faster animation on mobile
+    ease: "power3.out",
+    stagger: 0.2, // Smooth staggered effect
+    scrollTrigger: {
+      trigger: "#car-grid",
+      start: isMobile ? "top 95%" : "top 80%", // Start animation only when the section is almost visible on mobile
+      end: "top 40%",
+      once: true, // Runs once
+    },
+  });
 }
 
 function initTestimoniAnimation() {
@@ -244,6 +244,19 @@ function initContactUsAnimation() {
   });
 }
 
+function setPlaceholder(input, text) {
+  input.classList.add("placeholder-style");
+  input.setAttribute("data-placeholder", text);
+  input.addEventListener("focus", function () {
+    input.classList.remove("placeholder-style");
+  });
+  input.addEventListener("blur", function () {
+    if (!input.value) {
+      input.classList.add("placeholder-style");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
   document
     .querySelector("#hero #formBooking")
@@ -265,8 +278,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
     .querySelector('#contact #formContactUs input[name="phone-number"]')
     .addEventListener("input", validatePhoneNumber);
 
+  const dateInput = document.querySelector('input[type="date"]');
+  const timeInput = document.querySelector('input[type="time"]');
+
   const menuButton = document.querySelector(".flex.md\\:hidden button");
   const closeButton = mobileMenu.querySelector("#mobileMenu button");
+
+  setPlaceholder(dateInput, "Pilih Tanggal");
+  setPlaceholder(timeInput, "Pilih Waktu");
 
   menuButton.addEventListener("click", handleOpenMobileMenu);
   closeButton.addEventListener("click", handleCloseMobileMenu);
