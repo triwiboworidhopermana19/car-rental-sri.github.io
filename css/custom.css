@@ -1,3 +1,18 @@
+input[type="date"]::-webkit-datetime-edit,
+input[type="time"]::-webkit-datetime-edit {
+    color: transparent; /* Hide default text */
+}
+
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="time"]:focus::-webkit-datetime-edit {
+    color: black; /* Show user input when typing */
+}
+
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+    color: transparent; /* Hide default placeholder */
+}
+
 .placeholder-style::before {
   content: attr(data-placeholder);
   color: gray;
