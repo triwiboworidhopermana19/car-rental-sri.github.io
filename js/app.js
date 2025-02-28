@@ -57,10 +57,15 @@ function handleFormContactUs(e) {
   const phoneNumber = this.querySelector('input[name="phone-number"]').value;
   const message = this.querySelector('textarea[name="message"]').value.trim();
 
+  const finalMessage = [
+    `Nama: ${firstName} ${lastName}`,
+    `Email: ${email}`,
+    `Nomor Telepon: ${phoneNumber}`,
+    `Pesan: ${message}`
+  ].join('\n');
+
   window.open(
-    `https://api.whatsapp.com/send/?phone=1234567890&text=${encodeURI(
-      message
-    )}`,
+    `https://api.whatsapp.com/send/?phone=1234567890&text=${encodeURIComponent(finalMessage)}`,
     "_blank"
   );
 }
